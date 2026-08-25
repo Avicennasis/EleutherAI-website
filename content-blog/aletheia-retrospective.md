@@ -324,6 +324,8 @@ This definition captures two core aspects of lying that are omitted from the Lia
 
 This full statement (**not** "Ankara is a city in Luxembourg") is not a lie under the ordinary definition of lying, but it does meet the LBD. Another example would be a sarcastic statement. Someone might say "Great weather today" while standing in heavy rain. The speaker believes the literal content to be false, but does not intend the listener to believe it.
 
+**Implications for the broader field.** Lie-detection research needs to make its target explicit: a false statement, a statement the model believes is false, or an attempt to mislead an audience. These distinctions are not merely philosophical bookkeeping; they determine what counts as a positive example, what evidence a detector should use, and what claims its performance can support. Benchmarks based on the LBD can be valuable for measuring inconsistencies between a model's statements and beliefs, but success on them should not automatically be described as detecting deception in the ordinary sense unless intention and communicative context are also represented.
+
 ## 4.2 Black-box methods were *really* strong
 
 Black-box-only methods proved to be really strong during the competition, almost as strong as white-box. We also suspect that most strong white-box methods were indeed mostly black-box with some white-box signal added (as in our case). While we don't believe that lie detection can be solved robustly without looking at model internals, it was clearly highly effective on the validation set. It's hard to draw meaningful conclusions about why this occurred as the validation datasets are unknown to us, but we have several potential hypotheses:
@@ -332,6 +334,8 @@ Black-box-only methods proved to be really strong during the competition, almost
 - Model organisms were too transparent to a black-box reader, as a careful reading of the conversation would be enough to discover most of the lies.
 - Reading the suspect model's output through a second trusted model can give a better proxy of the suspect model's beliefs than expected, even in scenarios where the conversation itself doesn't allow for easy conclusions (more on this in the next section).
 - Current labelling approaches don't make it easy, if even possible, to confidently create datasets where suspect models lie based on beliefs that can be proven only by looking at internals.
+
+**Implications for the broader field.** Strong black-box performance is encouraging for practical monitoring because it suggests that useful detectors can sometimes be deployed without access to model weights or activations. It also raises the bar for evaluating white-box methods: they should demonstrate reliable gains over strong conversation-only baselines on datasets designed to rule out easy black-box shortcuts, including fact-checking, overly transparent model behavior, and correlations between the judge's and suspect's knowledge. Researchers should therefore report pure black-box ablations alongside hybrid methods; otherwise, it can be difficult to tell whether an internal signal is detecting a model's beliefs or merely supplementing an already strong judge.
 
 ## 4.3 Attacks on black-box lie detection
 
