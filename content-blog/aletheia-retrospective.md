@@ -122,31 +122,169 @@ During Aletheia's Quest we benchmarked our lie-detectors against 13 different mo
 
 **Table 1a. AUROC**
 
-| Baseline method | Category | Iris · Nemo | Iris · Qwen | Iris · Gemma | Notus · Nemo | Notus · Qwen | Notus · Gemma | Mean |
-| :-- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| [llm_judge](https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/llm_judge.ipynb) | black | **0.970** | 0.964 | **0.949** | **0.611** | 0.526 | 0.530 | **0.758** |
-| [unrelated_questions_probe](https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/unrelated_questions_probe.ipynb) | black | 0.530 | 0.445 | 0.786 | 0.511 | **0.639** | 0.494 | 0.567 |
-| [llm_self_eval](https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/llm_self_eval.ipynb) | black | 0.511 | 0.497 | 0.500 | 0.482 | 0.617 | 0.472 | 0.513 |
-| [mean_probe_organism](https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/mean_probe_organism.ipynb) | white | 0.475 | 0.950 | 0.812 | 0.548 | 0.617 | 0.464 | 0.644 |
-| [followup_probe_organism](https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/followup_probe_organism.ipynb) | white | 0.479 | **0.989** | 0.753 | 0.507 | 0.480 | 0.583 | 0.632 |
-| [dyl_probe_organism](https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/dyl_probe_organism.ipynb) | white | 0.491 | 0.854 | 0.338 | 0.507 | 0.495 | **0.705** | 0.565 |
-| **Ours** | white | 0.987 | 0.992 | 0.983 | 0.905 | 0.932 | 0.871 | 0.945 |
-| **Ours** | black | 0.976 | 0.967 | 0.956 | 0.923 | 0.872 | 0.859 | 0.926 |
+<div style="overflow-x: auto;">
+<table aria-label="Table 1a. AUROC" style="min-width: 855px;">
+<thead>
+<tr>
+<th rowspan="2" scope="col" style="text-align: left;">Baseline method</th>
+<th rowspan="2" scope="col" style="text-align: center;">Category</th>
+<th colspan="3" scope="colgroup" style="text-align: center;">Iris</th>
+<th colspan="3" scope="colgroup" style="text-align: center;">Notus</th>
+<th rowspan="2" scope="col" style="text-align: center;">Mean</th>
+</tr>
+<tr>
+<th scope="col" style="text-align: center;">Nemo</th>
+<th scope="col" style="text-align: center;">Qwen</th>
+<th scope="col" style="text-align: center;">Gemma</th>
+<th scope="col" style="text-align: center;">Nemo</th>
+<th scope="col" style="text-align: center;">Qwen</th>
+<th scope="col" style="text-align: center;">Gemma</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/llm_judge.ipynb">llm_judge</a></td>
+<td style="text-align: center;">black</td>
+<td style="text-align: center;">0.970</td><td style="text-align: center;">0.964</td><td style="text-align: center;">0.949</td>
+<td style="text-align: center;">0.611</td><td style="text-align: center;">0.526</td><td style="text-align: center;">0.530</td>
+<td style="text-align: center;">0.758</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/unrelated_questions_probe.ipynb">unrelated_questions_probe</a></td>
+<td style="text-align: center;">black</td>
+<td style="text-align: center;">0.530</td><td style="text-align: center;">0.445</td><td style="text-align: center;">0.786</td>
+<td style="text-align: center;">0.511</td><td style="text-align: center;">0.639</td><td style="text-align: center;">0.494</td>
+<td style="text-align: center;">0.567</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/llm_self_eval.ipynb">llm_self_eval</a></td>
+<td style="text-align: center;">black</td>
+<td style="text-align: center;">0.511</td><td style="text-align: center;">0.497</td><td style="text-align: center;">0.500</td>
+<td style="text-align: center;">0.482</td><td style="text-align: center;">0.617</td><td style="text-align: center;">0.472</td>
+<td style="text-align: center;">0.513</td>
+</tr>
+<tr>
+<td><strong>Ours</strong></td>
+<td style="text-align: center;">black</td>
+<td style="text-align: center;">0.976</td><td style="text-align: center;">0.967</td><td style="text-align: center;">0.956</td>
+<td style="text-align: center;">0.923</td><td style="text-align: center;">0.872</td><td style="text-align: center;">0.859</td>
+<td style="text-align: center;">0.926</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/mean_probe_organism.ipynb">mean_probe_organism</a></td>
+<td style="text-align: center;">white</td>
+<td style="text-align: center;">0.475</td><td style="text-align: center;">0.950</td><td style="text-align: center;">0.812</td>
+<td style="text-align: center;">0.548</td><td style="text-align: center;">0.617</td><td style="text-align: center;">0.464</td>
+<td style="text-align: center;">0.644</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/followup_probe_organism.ipynb">followup_probe_organism</a></td>
+<td style="text-align: center;">white</td>
+<td style="text-align: center;">0.479</td><td style="text-align: center;">0.989</td><td style="text-align: center;">0.753</td>
+<td style="text-align: center;">0.507</td><td style="text-align: center;">0.480</td><td style="text-align: center;">0.583</td>
+<td style="text-align: center;">0.632</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/dyl_probe_organism.ipynb">dyl_probe_organism</a></td>
+<td style="text-align: center;">white</td>
+<td style="text-align: center;">0.491</td><td style="text-align: center;">0.854</td><td style="text-align: center;">0.338</td>
+<td style="text-align: center;">0.507</td><td style="text-align: center;">0.495</td><td style="text-align: center;">0.705</td>
+<td style="text-align: center;">0.565</td>
+</tr>
+<tr>
+<td><strong>Ours</strong></td>
+<td style="text-align: center;">white</td>
+<td style="text-align: center;">0.987</td><td style="text-align: center;">0.992</td><td style="text-align: center;">0.983</td>
+<td style="text-align: center;">0.905</td><td style="text-align: center;">0.932</td><td style="text-align: center;">0.871</td>
+<td style="text-align: center;">0.945</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 **Table 1b. Balanced accuracy**
 
-| Baseline method | Category | Iris · Nemo | Iris · Qwen | Iris · Gemma | Notus · Nemo | Notus · Qwen | Notus · Gemma | Mean |
-| :-- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| [llm_judge](https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/llm_judge.ipynb) | black | **0.833** | **0.828** | **0.802** | **0.560** | 0.512 | **0.552** | **0.681** |
-| [unrelated_questions_probe](https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/unrelated_questions_probe.ipynb) | black | 0.502 | 0.495 | 0.502 | 0.505 | **0.562** | 0.502 | 0.512 |
-| [llm_self_eval](https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/llm_self_eval.ipynb) | black | 0.508 | 0.497 | 0.500 | 0.482 | 0.532 | 0.480 | 0.500 |
-| [mean_probe_organism](https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/mean_probe_organism.ipynb) | white | 0.500 | 0.635 | 0.560 | 0.525 | 0.507 | 0.500 | 0.538 |
-| [followup_probe_organism](https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/followup_probe_organism.ipynb) | white | 0.500 | 0.818 | 0.505 | 0.508 | 0.500 | 0.500 | 0.555 |
-| [dyl_probe_organism](https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/dyl_probe_organism.ipynb) | white | 0.510 | 0.500 | 0.500 | 0.487 | 0.515 | 0.500 | 0.502 |
-| **Ours** | white | 0.942 | 0.965 | 0.932 | 0.850 | 0.850 | 0.800 | 0.890 |
-| **Ours** | black | 0.907 | 0.905 | 0.890 | 0.762 | 0.732 | 0.795 | 0.832 |
+<div style="overflow-x: auto;">
+<table aria-label="Table 1b. Balanced accuracy" style="min-width: 855px;">
+<thead>
+<tr>
+<th rowspan="2" scope="col" style="text-align: left;">Baseline method</th>
+<th rowspan="2" scope="col" style="text-align: center;">Category</th>
+<th colspan="3" scope="colgroup" style="text-align: center;">Iris</th>
+<th colspan="3" scope="colgroup" style="text-align: center;">Notus</th>
+<th rowspan="2" scope="col" style="text-align: center;">Mean</th>
+</tr>
+<tr>
+<th scope="col" style="text-align: center;">Nemo</th>
+<th scope="col" style="text-align: center;">Qwen</th>
+<th scope="col" style="text-align: center;">Gemma</th>
+<th scope="col" style="text-align: center;">Nemo</th>
+<th scope="col" style="text-align: center;">Qwen</th>
+<th scope="col" style="text-align: center;">Gemma</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/llm_judge.ipynb">llm_judge</a></td>
+<td style="text-align: center;">black</td>
+<td style="text-align: center;">0.833</td><td style="text-align: center;">0.828</td><td style="text-align: center;">0.802</td>
+<td style="text-align: center;">0.560</td><td style="text-align: center;">0.512</td><td style="text-align: center;">0.552</td>
+<td style="text-align: center;">0.681</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/unrelated_questions_probe.ipynb">unrelated_questions_probe</a></td>
+<td style="text-align: center;">black</td>
+<td style="text-align: center;">0.502</td><td style="text-align: center;">0.495</td><td style="text-align: center;">0.502</td>
+<td style="text-align: center;">0.505</td><td style="text-align: center;">0.562</td><td style="text-align: center;">0.502</td>
+<td style="text-align: center;">0.512</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/llm_self_eval.ipynb">llm_self_eval</a></td>
+<td style="text-align: center;">black</td>
+<td style="text-align: center;">0.508</td><td style="text-align: center;">0.497</td><td style="text-align: center;">0.500</td>
+<td style="text-align: center;">0.482</td><td style="text-align: center;">0.532</td><td style="text-align: center;">0.480</td>
+<td style="text-align: center;">0.500</td>
+</tr>
+<tr>
+<td><strong>Ours</strong></td>
+<td style="text-align: center;">black</td>
+<td style="text-align: center;">0.907</td><td style="text-align: center;">0.905</td><td style="text-align: center;">0.890</td>
+<td style="text-align: center;">0.762</td><td style="text-align: center;">0.732</td><td style="text-align: center;">0.795</td>
+<td style="text-align: center;">0.832</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/mean_probe_organism.ipynb">mean_probe_organism</a></td>
+<td style="text-align: center;">white</td>
+<td style="text-align: center;">0.500</td><td style="text-align: center;">0.635</td><td style="text-align: center;">0.560</td>
+<td style="text-align: center;">0.525</td><td style="text-align: center;">0.507</td><td style="text-align: center;">0.500</td>
+<td style="text-align: center;">0.538</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/followup_probe_organism.ipynb">followup_probe_organism</a></td>
+<td style="text-align: center;">white</td>
+<td style="text-align: center;">0.500</td><td style="text-align: center;">0.818</td><td style="text-align: center;">0.505</td>
+<td style="text-align: center;">0.508</td><td style="text-align: center;">0.500</td><td style="text-align: center;">0.500</td>
+<td style="text-align: center;">0.555</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ndif-team/Aletheias-Quest-Competition/blob/master/baselines/dyl_probe_organism.ipynb">dyl_probe_organism</a></td>
+<td style="text-align: center;">white</td>
+<td style="text-align: center;">0.510</td><td style="text-align: center;">0.500</td><td style="text-align: center;">0.500</td>
+<td style="text-align: center;">0.487</td><td style="text-align: center;">0.515</td><td style="text-align: center;">0.500</td>
+<td style="text-align: center;">0.502</td>
+</tr>
+<tr>
+<td><strong>Ours</strong></td>
+<td style="text-align: center;">white</td>
+<td style="text-align: center;">0.942</td><td style="text-align: center;">0.965</td><td style="text-align: center;">0.932</td>
+<td style="text-align: center;">0.850</td><td style="text-align: center;">0.850</td><td style="text-align: center;">0.800</td>
+<td style="text-align: center;">0.890</td>
+</tr>
+</tbody>
+</table>
+</div>
 
-**Table 1.** Baseline performance across all model–dataset cells, reported as (a) AUROC and (b) balanced accuracy. The final column reports the mean across the six model–dataset combinations. Bold marks the strongest baseline in each column for that metric; our two methods are listed separately at the foot of each table.
+**Table 1.** Performance across all model–dataset cells, reported as (a) AUROC and (b) balanced accuracy. The final column reports the mean across the six model–dataset combinations. Black-box methods are listed first, followed by white-box methods.
 
 Our team submitted a valid result with 0.985 and 0.871 mean AUROC on Iris and Notus respectively in week 2, saturating most of the validation benchmark. More diverse datasets with multiple difficult scenarios like Notus would have made it easier to understand how our detectors could actually generalize on unseen data, and in Section 4 we elaborate on what makes a lie more challenging to detect. We hope that this can help create more difficult datasets.
 
