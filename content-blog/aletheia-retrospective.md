@@ -40,7 +40,7 @@ We release a companion repository containing our best-performing methods and the
 
 # 2. The competition
 
-*Figure 1: We audited different types of scenarios, for example true/false statements, open-ended questions, and agentic trajectories containing in-context evidence of dishonest reporting. The untrusted model was then given a list of questions from the scenarios and generated transcripts. Our task was to detect which transcripts contained lies. The output was a .csv file containing a transcript index, a scalar value, and a binary decision for each transcript.*
+{{<figure src="/images/blog/aletheia-retrospective/competition-pipeline.png" width="100%" align="center" alt="Diagram showing scenarios passed through an untrusted model and a black-box or white-box detector to produce scores and classifications." caption="**Figure 1.** We audited different types of scenarios, for example true/false statements, open-ended questions, and agentic trajectories containing in-context evidence of dishonest reporting. The untrusted model was then given a list of questions from the scenarios and generated transcripts. Our task was to detect which transcripts contained lies. The output was a .csv file containing a transcript index, a scalar value, and a binary decision for each transcript."/>}}
 
 During this competition we evaluated our detectors across three model families: Qwen 3.5, Gemma 3, and Nemotron 3 Super, with model sizes ranging from 27B to 120B parameters, over two validation datasets called Iris and Notus. To make it more challenging, the competition also evaluated our methods on LoRA finetunes of each model family. The finetunes adjusted the verbosity of the lies and the style of lie. For example, some finetunes of Gemma would lie in a more comical way ("Somalia is a delicious pasta") whereas others would be more terse.
 
@@ -58,7 +58,7 @@ Before describing our detector itself, it is worth explaining how we approached 
 
 It was this iterative process, rather than any single upfront design, that produced our final method: we ended up decomposing the task of the trusted judge into single actions, and controlling closely how the judge is exposed to the transcript. Our black-box method worked so well that it didn't make sense to develop a separate white-box method. Instead, we used the same primary method and supplemented it with some additional information that probes provided.
 
-*Figure 2: The above figure shows a schematic version of our leading black-box method, which outperformed the competition baseline by +0.151 balanced accuracy and +0.168 AUROC.*
+{{<figure src="/images/blog/aletheia-retrospective/black-box-method.png" width="100%" align="center" alt="Diagram of the four-pass black-box detection method: answer independently, extract claims, then judge twice with the answer order swapped." caption="**Figure 2.** The above figure shows a schematic version of our leading black-box method, which outperformed the competition baseline by +0.151 balanced accuracy and +0.168 AUROC."/>}}
 
 Figure 2 shows the core idea behind our final black-box approach. Our approach has two phases: one aimed at identifying the correct answer to the question and the key facts that the untrusted model uses to support its claim, and the other aimed at validating whether the answer given by the judge is factually correct and not based on misleading arguments.
 
@@ -220,7 +220,7 @@ During the competition, we trained more than ten linear probe variants, mostly u
 
 After the competition, we investigated this more systematically by running the fixed probes we still had access to across our broader gauntlet of deception datasets. Every probe performed remarkably well in at least some scenarios, but every one also fell below chance somewhere else. In several cases the relationship reversed, with deceptive examples systematically receiving lower deception scores than honest ones.
 
-*Figure 3: Linear probes sometimes invert on out-of-distribution deception datasets. Probes that achieve very high AUROC on their in-distribution baseline can degrade sharply on held-out settings, in some cases falling below chance.*
+{{<figure src="/images/blog/aletheia-retrospective/probe-inversion.png" width="100%" align="center" alt="Bar charts of AUROC for four linear probes across in-distribution and out-of-distribution deception datasets, including sign-inverted cases below chance." caption="**Figure 3.** Linear probes sometimes invert on out-of-distribution deception datasets. Probes that achieve very high AUROC on their in-distribution baseline can degrade sharply on held-out settings, in some cases falling below chance."/>}}
 
 Our interpretation is that linear probes appear to recover genuine signals associated with lying in particular settings, while the role of those signals can change across contexts.
 
