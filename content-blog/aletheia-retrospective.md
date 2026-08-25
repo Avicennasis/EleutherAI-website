@@ -1,6 +1,7 @@
 ---
 title: "What We Learned Trying to Catch AI Liars: An Aletheia's Quest Retrospective"
 date: 2026-08-25T12:35:00-04:00
+author: ["Giuseppe Birardi", "Alexander Reinthal", "Gonçalo Paulo", "Stella Biderman"]
 description: "What we learned while building black-box and white-box detectors for AI deception during Aletheia's Quest."
 categories: ["Research Notes"]
 ShowToc: true
