@@ -126,19 +126,21 @@ During Aletheia's Quest we benchmarked our lie-detectors against 13 different mo
 <table aria-label="Table 1a. AUROC" style="min-width: 855px;">
 <thead>
 <tr>
-<th rowspan="2" scope="col" style="text-align: left;">Baseline method</th>
-<th rowspan="2" scope="col" style="text-align: center;">Category</th>
-<th colspan="3" scope="colgroup" style="text-align: center;">Iris</th>
-<th colspan="3" scope="colgroup" style="text-align: center;">Notus</th>
-<th rowspan="2" scope="col" style="text-align: center;">Mean</th>
+<th rowspan="2" scope="col" style="text-align: left; vertical-align: bottom;">Baseline method</th>
+<th aria-hidden="true" style="border-bottom: none;"></th>
+<th colspan="3" scope="colgroup" style="text-align: center; border-bottom: none; padding-bottom: 0;"><span style="display: block; margin: 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border);">Iris</span></th>
+<th colspan="3" scope="colgroup" style="text-align: center; border-bottom: none; padding-bottom: 0;"><span style="display: block; margin: 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border);">Notus</span></th>
+<th aria-hidden="true" style="border-bottom: none;"></th>
 </tr>
 <tr>
+<th scope="col" style="text-align: center;">Category</th>
 <th scope="col" style="text-align: center;">Nemo</th>
 <th scope="col" style="text-align: center;">Qwen</th>
 <th scope="col" style="text-align: center;">Gemma</th>
 <th scope="col" style="text-align: center;">Nemo</th>
 <th scope="col" style="text-align: center;">Qwen</th>
 <th scope="col" style="text-align: center;">Gemma</th>
+<th scope="col" style="text-align: center;">Mean</th>
 </tr>
 </thead>
 <tbody>
@@ -208,19 +210,21 @@ During Aletheia's Quest we benchmarked our lie-detectors against 13 different mo
 <table aria-label="Table 1b. Balanced accuracy" style="min-width: 855px;">
 <thead>
 <tr>
-<th rowspan="2" scope="col" style="text-align: left;">Baseline method</th>
-<th rowspan="2" scope="col" style="text-align: center;">Category</th>
-<th colspan="3" scope="colgroup" style="text-align: center;">Iris</th>
-<th colspan="3" scope="colgroup" style="text-align: center;">Notus</th>
-<th rowspan="2" scope="col" style="text-align: center;">Mean</th>
+<th rowspan="2" scope="col" style="text-align: left; vertical-align: bottom;">Baseline method</th>
+<th aria-hidden="true" style="border-bottom: none;"></th>
+<th colspan="3" scope="colgroup" style="text-align: center; border-bottom: none; padding-bottom: 0;"><span style="display: block; margin: 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border);">Iris</span></th>
+<th colspan="3" scope="colgroup" style="text-align: center; border-bottom: none; padding-bottom: 0;"><span style="display: block; margin: 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border);">Notus</span></th>
+<th aria-hidden="true" style="border-bottom: none;"></th>
 </tr>
 <tr>
+<th scope="col" style="text-align: center;">Category</th>
 <th scope="col" style="text-align: center;">Nemo</th>
 <th scope="col" style="text-align: center;">Qwen</th>
 <th scope="col" style="text-align: center;">Gemma</th>
 <th scope="col" style="text-align: center;">Nemo</th>
 <th scope="col" style="text-align: center;">Qwen</th>
 <th scope="col" style="text-align: center;">Gemma</th>
+<th scope="col" style="text-align: center;">Mean</th>
 </tr>
 </thead>
 <tbody>
