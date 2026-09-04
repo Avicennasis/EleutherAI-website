@@ -8,7 +8,7 @@ contributors: ["EleutherAI"]
 cover:
   image: "images/blog/safetensors-security-audit/thumbnail.png"
   caption: ""
-  alt: EleutherAI x Stabilty.ai x HuggingFace
+  alt: EleutherAI x Stability.ai x HuggingFace
 ---
 
 <h1>Audit shows that safetensors is safe and ready to become the default</h1>
@@ -109,7 +109,7 @@ fully public.
 [Full report](https://huggingface.co/datasets/safetensors/trail_of_bits_audit_repot/resolve/main/SOW-TrailofBits-EleutherAI_HuggingFace-v1.2.pdf)
 
 
-One import thing to note is that the library is written in Rust. This adds
+One important thing to note is that the library is written in Rust. This adds
 an extra layer of [security](https://doc.rust-lang.org/rustc/exploit-mitigations.html)
 coming directly from the language itself.
 

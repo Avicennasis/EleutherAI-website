@@ -1,5 +1,5 @@
 ---
-title: "Reward Hacking Resarch Update"
+title: "Reward Hacking Research Update"
 date: 2025-10-07
 description: "Interim report on ongoing work on reward hacking"
 author: ["David Johnston"]
@@ -50,7 +50,7 @@ We trained these models for 10 epochs on the training set (13 exploit types, 371
 On the evaluation set (13 new exploit types not in training), both Qwen 3 32B and GPT-OSS 20B successfully found about 35% of the exploits after fine-tuning when explicitly prompted to look for them. When not explicitly asked to find hacks, the models diverged: GPT-OSS continued to exploit in ~25% of cases, while Qwen’s exploit rate fell below 5%. We speculate that Qwen’s slower-changing propensity to exploit problems relates to our observation that it learned to hack slowly in RL environments.
 
 ![Average rates of reward hacking](/images/blog/reward-hacking/hack_rates_on_eval_overall.png)
-*Figure 2: Comparison of reward hacking rates for the four models studies with and without explicit prompting to look for hacks, and with and without finetuning on exploit examples*
+*Figure 2: Comparison of reward hacking rates for the four models studied with and without explicit prompting to look for hacks, and with and without finetuning on exploit examples*
 
 In general, fine tuning led to models more robustly find exploits they were already able to find when prompted to look for them. There were some exceptions such as "mock functionality replacement", where Qwen 32B and OSS 20B showed some ability to find the exploit only after fine-tuning.
 

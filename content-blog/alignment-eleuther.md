@@ -3,7 +3,7 @@ title: "Alignment Research @ EleutherAI"
 date: 2023-05-03T00:00:00Z
 lastmod: 2023-05-03T00:00:00Z
 draft: False
-description: "A breif overview of EAIs approach to alignment"
+description: "A brief overview of EAI’s approach to alignment"
 author: ["Curtis Huebner"]
 contributors: ["EleutherAI"]
 categories: ["Announcement"]
@@ -13,7 +13,7 @@ categories: ["Announcement"]
 
 Initially, EleutherAI focused mainly on supporting open source research. AI alignment was something that was acknowledged by many of the core members as important, but it was not the primary focus. We mainly had discussions about the topic in the #alignment channel and other parts of our discord while we worked on other projects.
 
-As EAI grew, AI alignment started to get taken more seriously, especially by its core members. What started off as a single channel turned into a whole host of channels about different facets of alignment. We also hosted several reading groups related to alignment, such as the modified version of [Richard Ngo’s curriculum](https://www.alignmentforum.org/posts/Zmwkz2BMvuFFR8bi3/agi-safety-fundamentals-curriculum-and-application) and an interpretability reading group. Eventually alignment became the central focus for a large segment of  EAIs leadership, so much so that all our previous founders went off to do full time alignment research at [Conjecture](https://conjecture.dev/) and OpenAI.
+As EAI grew, AI alignment started to get taken more seriously, especially by its core members. What started off as a single channel turned into a whole host of channels about different facets of alignment. We also hosted several reading groups related to alignment, such as the modified version of [Richard Ngo’s curriculum](https://www.alignmentforum.org/posts/Zmwkz2BMvuFFR8bi3/agi-safety-fundamentals-curriculum-and-application) and an interpretability reading group. Eventually alignment became the central focus for a large segment of  EAI’s leadership, so much so that all our previous founders went off to do full time alignment research at [Conjecture](https://conjecture.dev/) and OpenAI.
 
 Right now, the current leadership believes making progress in AI alignment is very important. The organization as a whole is involved in a mix of alignment research, interpretability work, and other projects that we find interesting.
 
